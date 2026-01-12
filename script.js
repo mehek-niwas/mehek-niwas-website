@@ -10,7 +10,7 @@ const scrollToTopBtn = document.getElementById('scrollToTop');
 
 // Show/hide button based on scroll position
 window.addEventListener('scroll', () => {
-  if (window.pageYOffset > 250) {
+  if (window.pageYOffset > 200) {
     scrollToTopBtn.classList.add('visible');
   } else {
     scrollToTopBtn.classList.remove('visible');
