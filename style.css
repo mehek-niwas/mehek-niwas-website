@@ -35,15 +35,41 @@ header h1 {
   margin: 0 20px;
 }
 
-.star {
+/* .star {
   width: 50px;
   position: relative;
-}
+} */
 
 .winkstar {
   width: 40px;
   position: relative;
   top: 10px;
+}
+
+.name-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+
+.star {
+  position: absolute;
+  width: 30px;
+}
+
+/* Left star: slightly below bottom-left of "mehek" */
+.star.left {
+  position: absolute;
+  left: -5px;
+  bottom: 0; /* Align it to the bottom of the 'm' first */
+  transform: translateY(18px) rotate(9deg) scale(1.5); /* Forces it 15px FURTHER down */
+}
+
+/* Right star: slightly above top-right of "niwas" */
+.winkstar.right {
+  right: 30px;
+  top: -15px;
+  transform: rotate(-15deg); /* Tilts the star slightly */
 }
 
 /* Nav */
@@ -86,38 +112,153 @@ main {
   padding: 20px 40px 40px 40px;
 }
 
-/* Image */
-.image img {
-  margin-top: 85px;
+.image-container {
+  position: relative; /* anchor for absolutely-positioned .hover-img */
   width: 100%;
+  max-width: 300px; /* match the left grid column */
+}
+
+.image-container .main-img {
+  margin-top: 85px; /* matches previous .image img spacing */
+  display: block; /* removes baseline whitespace */
+  width: 100%;
+  max-width: 100%;
+  height: auto; /* prevents overflow due to fixed height */
   image-rendering: pixelated;
 }
 
-.name-wrapper {
-  position: relative;
-  display: inline-block;
-}
-
-
-.star {
+/* Your Flat Strategy Hover Images */
+.hover-img {
   position: absolute;
-  width: 30px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 10;
 }
 
-/* Left star: slightly below bottom-left of "mehek" */
-.star.left {
-  position: absolute;
-  left: -5px;
-  bottom: 0; /* Align it to the bottom of the 'm' first */
-  transform: translateY(18px) rotate(9deg) scale(1.5); /* Forces it 15px FURTHER down */
+/* The JS will add this class to everything with the .entropy-piece class */
+.show-piece {
+  opacity: 1 !important;
+  transform: scale(1.05); /* Optional "pop" effect */
 }
 
-/* Right star: slightly above top-right of "niwas" */
-.winkstar.right {
-  right: 30px;
-  top: -15px;
-  transform: rotate(-15deg); /* Tilts the star slightly */
+/* New "Sticky" state */
+.is-active {
+  opacity: 1 !important;
+  visibility: visible !important;
+  /* You could add a border or glow here to show it's 'pinned' */
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
 }
+
+/* individual image positioning */
+
+/* pixel-art */
+.pixel-1 {
+  top: 5.9%;  
+  right: 50.1%; 
+  width: 20.7%; 
+}
+
+.pixel-2 {
+  top: 21.4%;  
+  right: 72.5%; 
+  width: 31.5%; 
+}
+
+.pixel-3 {
+  bottom: 39.8%; 
+  right: 79.8%; 
+  width: 18.9%; 
+}
+
+.pixel-4 {
+  bottom: 19.9%; 
+  right: 60.8%; 
+  width: 18.9%; 
+}
+
+/* describe */
+.describe-1 {
+  top: 1.9%;  
+  right: 70.1%; 
+  width: 23.7%; 
+}
+
+.describe-2 {
+  top: 21.4%;  
+  right: 98.5%; 
+  width: 37.5%; 
+}
+
+.describe-3 {
+  bottom: 39.8%; 
+  right: 99.8%; 
+  width: 25.9%; 
+}
+
+.describe-4 {
+  bottom: 13.9%; 
+  right: 70.8%; 
+  width: 31.9%; 
+}
+
+/* nextera */
+.nextera-1 {
+  top: 0%;  
+  right: 40.1%; 
+  width: 45.7%; 
+}
+
+.nextera-2 {
+  top: 8.4%;  
+  right: 96.5%; 
+  width: 22.5%; 
+}
+
+.nextera-3 {
+  bottom: 29.8%; 
+  right: 90.8%; 
+  width: 90.9%; 
+}
+
+.nextera-4 {
+  bottom: 0.9%; 
+  right: 60.8%; 
+  width: 98.9%; 
+}
+
+/* scraply */
+.scraply-1 {
+  bottom: 43.8%; 
+  right: 90.8%; 
+  width: 90.9%; 
+}
+
+/* entropy */
+.entropy-1 {
+  top: 0%;  
+  right: 40.1%; 
+  width: 26.8%; 
+}
+
+.entropy-2 {
+  top: 10.4%;  
+  right: 93.5%; 
+  width: 63.5%; 
+}
+
+.entropy-3 {
+  bottom: 13.8%; 
+  right: 110.8%; 
+  width: 35.9%; 
+}
+
+.entropy-4 {
+  bottom: 6.7%; 
+  right: 24.8%; 
+  width: 65.9%; 
+}
+
 
 /* Text */
 .text h2 {

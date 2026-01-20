@@ -19,7 +19,7 @@
 <body>
 
   <!-- Decorative vertical line -->
-  <div class="side-line"></div>
+  <!-- <div class="side-line"></div> -->
 
   <!-- Header -->
 <header>
@@ -41,32 +41,54 @@
 
   <!-- Main content -->
   <main>
-    <div class="image">
-      <img src="assets/mehek_scuba.png" alt="mehek" />
+    <div class="image-container">
+      <img src="assets/mehek_scuba.png" alt="mehek" class="main-img"/>
+
+      <img src="assets/entropy/first_heatmap.png" class="hover-img entropy-piece entropy-1" />
+      <img src="assets/entropy/understanding_attention.png" class="hover-img entropy-piece entropy-2" />
+      <img src="assets/entropy/heatmaps.png" class="hover-img entropy-piece entropy-3"/>
+      <img src="assets/entropy/entropy_histogram.png" class="hover-img entropy-piece entropy-4" />
+
+      <img src="assets/scraply/scraply_page.png" class="hover-img scraply-piece scraply-1" />
+
+      <img src="assets/nextera-internship/my_team.png" class="hover-img nextera-piece nextera-3" />
+      <img src="assets/nextera-internship/intro_to_github.png" class="hover-img nextera-piece nextera-1"/>
+      <img src="assets/nextera-internship/final_pres_slide.png" class="hover-img nextera-piece nextera-4" />
+      <img src="assets/nextera-internship/mehek_at_fpl.png" class="hover-img nextera-piece nextera-2"/>
+
+      <img src="assets/describe-internship/i_am_schema.jpeg" class="hover-img describe-piece describe-1"/>
+      <img src="assets/describe-internship/mehek_at_describe.png" class="hover-img describe-piece describe-2" />
+      <img src="assets/describe-internship/coding_with_kirby.png" class="hover-img describe-piece describe-3"/>
+      <img src="assets/describe-internship/eliam.png" class="hover-img describe-piece describe-4"/>
+
+      <img src="assets/pixel-art/sassy_frog.png" class="hover-img pixel-piece pixel-1"/>
+      <img src="assets/pixel-art/tiny_kirby_magic.gif" class="hover-img pixel-piece pixel-2" />
+      <img src="assets/pixel-art/wink_star.webp" class="hover-img pixel-piece pixel-3"/>
+      <img src="assets/pixel-art/strawberry_cow.webp" class="hover-img pixel-piece pixel-4" />
     </div>
 
     <div class="text">
       <h2>hello!</h2>
       <p>i’m a cs student at rutgers university.</p>
       <p>
-        currently, im <u>exploring entropy propagation</u> in vision transformers
+        currently, im <u class="trigger" data-hover="entropy-piece">exploring entropy propagation</u> in vision transformers
         for interpretable ai research
       </p>
     
       <p>
         making machine learning & ai more accessible motivates a lot of my work.
-        my favorite project is <u>scraply</u>, a website designed to help beginners get started with deep learning.
+        my favorite project is <u class="trigger" data-hover="scraply-piece">scraply</u>, a website designed to help beginners get started with deep learning.
       </p>
       <p>
-        i <u>teach and run ml/ai workshops</u> at the rutgers ieee club and blueprint club. (come join!)
+        i teach and run ml/ai workshops at the rutgers ieee club and blueprint club. (come join!)
       </p>
       <p>
         i've also had the chance to apply ml in my internship projects.
-        last summer, i built <u>forecasting models at nextera energy</u> using data from ~20 million calls. then later <u>i got to work with describe</u>, a healthtech startup based in miami.
+        last summer, i built <u class="trigger" data-hover="nextera-piece">forecasting models at nextera energy</u> using data from ~20 million calls. then later <u class="trigger" data-hover="describe-piece">i got to work with describe</u>, a healthtech startup based in miami.
       </p>
 
       <p>
-        outside of computer science, i recently started <u>learning pixel art</u>! 
+        outside of computer science, i recently started <u class="trigger" data-hover="pixel-piece">learning pixel art</u>! 
         <!-- most of the icons on this website were made by me :D -->
       </p>
       <p> and sometimes <u>i like to touch grass</u> too </p>
