@@ -1,45 +1,97 @@
 // script.js
 
-// image upon hover
+// Cache all triggers and their associated images upfront
 const triggers = document.querySelectorAll('.trigger');
+const triggerMap = new Map(); // Maps trigger element to its images array
+let activeTrigger = null; // Track currently active trigger
 
+// Build the trigger-image mapping once
 triggers.forEach(trigger => {
   const targetSet = trigger.getAttribute('data-hover');
-  const targetImages = document.querySelectorAll(`.${targetSet}`);
+  const targetImages = Array.from(document.querySelectorAll(`.${targetSet}`));
+  triggerMap.set(trigger, targetImages);
+});
 
-  // 1. Mouse Enter: Only show if not already sticky
+// Helper function to hide an image set
+function hideImageSet(trigger) {
+  const images = triggerMap.get(trigger);
+  if (images) {
+    trigger.classList.remove('clicked');
+    images.forEach(img => {
+      img.classList.remove('is-active', 'show-piece');
+    });
+  }
+}
+
+// Helper function to show an image set
+function showImageSet(trigger) {
+  const images = triggerMap.get(trigger);
+  if (images) {
+    trigger.classList.add('clicked');
+    images.forEach(img => {
+      img.classList.add('is-active', 'show-piece');
+    });
+  }
+}
+
+// Helper function to hide all image sets except a specific one
+function hideAllExcept(exceptTrigger) {
+  triggers.forEach(otherTrigger => {
+    if (otherTrigger !== exceptTrigger) {
+      const images = triggerMap.get(otherTrigger);
+      images.forEach(img => {
+        img.classList.remove('show-piece', 'is-active');
+      });
+    }
+  });
+}
+
+// Set up event listeners for each trigger
+triggers.forEach(trigger => {
+  const targetImages = triggerMap.get(trigger);
+
+  // 1. Mouse Enter: Hide all other images (including clicked ones), show only this trigger's images
   trigger.addEventListener('mouseenter', () => {
+    // Hide all other image sets (including clicked ones)
+    hideAllExcept(trigger);
+    // Show this trigger's images
     targetImages.forEach(img => {
-      if (!img.classList.contains('is-active')) {
-        img.classList.add('show-piece');
-      }
+      img.classList.add('show-piece');
     });
   });
 
-  // 2. Mouse Leave: Only hide if not already sticky
+  // 2. Mouse Leave: Hide this trigger's images if not clicked, restore clicked set if exists
   trigger.addEventListener('mouseleave', () => {
-    targetImages.forEach(img => {
-      if (!img.classList.contains('is-active')) {
+    // If this trigger is not the active one, hide its images
+    if (trigger !== activeTrigger) {
+      targetImages.forEach(img => {
         img.classList.remove('show-piece');
+      });
+      // Restore the active trigger's images if one exists
+      if (activeTrigger) {
+        showImageSet(activeTrigger);
       }
-    });
+    }
   });
 
   // 3. Click: The Master Toggle
   trigger.addEventListener('click', (e) => {
     e.preventDefault();
     
-    targetImages.forEach(img => {
-      // If it's already sticky, remove everything to hide it
-      if (img.classList.contains('is-active')) {
-        img.classList.remove('is-active');
-        img.classList.remove('show-piece');
-      } else {
-        // Otherwise, make it sticky
-        img.classList.add('is-active');
-        img.classList.add('show-piece');
-      }
-    });
+    // Hide previously active trigger if different
+    if (activeTrigger && activeTrigger !== trigger) {
+      hideImageSet(activeTrigger);
+    }
+    
+    // Toggle current trigger
+    const isCurrentlyActive = trigger === activeTrigger;
+    if (isCurrentlyActive) {
+      hideImageSet(trigger);
+      activeTrigger = null;
+    } else {
+      showImageSet(trigger);
+      activeTrigger = trigger;
+    }
   });
 });
 
@@ -68,6 +120,13 @@ scrollToTopBtn.addEventListener('click', () => {
   window.scrollTo({
     top: 0,
     behavior: 'smooth'
+  });
+});
+
+// Handle clicks on underlined text (for non-trigger elements)
+document.querySelectorAll('u:not(.trigger)').forEach(uElement => {
+  uElement.addEventListener('click', () => {
+    uElement.classList.toggle('clicked');
   });
 });
 
