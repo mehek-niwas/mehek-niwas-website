@@ -210,7 +210,7 @@ main {
 }
 
 .nextera-2 {
-  top: 8.4%;  
+  top: 18.4%;  
   right: 96.5%; 
   width: 22.5%; 
 }
@@ -222,9 +222,9 @@ main {
 }
 
 .nextera-4 {
-  bottom: 0.9%; 
+  bottom: 0%; 
   right: 60.8%; 
-  width: 98.9%; 
+  width: 88.9%; 
 }
 
 /* scraply */
@@ -270,6 +270,18 @@ main {
 .text p {
   font-size: 20px;
   line-height: 1.4;
+}
+
+/* Underlined text with pastel green highlight */
+u {
+  background-color: #ffc0da;
+  text-decoration: underline;
+}
+
+/* Darker pastel green when clicked */
+u.clicked {
+  background-color: hotpink;
+  /* color: white; */
 }
 
 /* Scroll to top button */
