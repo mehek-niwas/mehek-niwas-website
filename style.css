@@ -24,13 +24,13 @@ body {
 
 /* Header */
 header {
-  margin-top: 40px;
+  margin-top: 22px;
   text-align: center;
   position: relative;
 }
 
 header h1 {
-  font-size: 80px;
+  font-size: 60px;
   display: inline-block;
   margin: 0 20px;
 }
@@ -259,6 +259,30 @@ main {
   width: 65.9%; 
 }
 
+/* touch */
+.touch-1 {
+  top: 0%;  
+  right: 40.1%; 
+  width: 30.7%; 
+}
+
+.touch-2 {
+  top: 13.4%;  
+  right: 79.5%; 
+  width: 30.5%; 
+}
+
+.touch-3 {
+  bottom: 35.8%; 
+  right: 85.8%; 
+  width: 30.9%; 
+}
+
+.touch-4 {
+  bottom: 10%; 
+  right: 62.8%; 
+  width: 40.9%; 
+}
 
 /* Text */
 .text h2 {
