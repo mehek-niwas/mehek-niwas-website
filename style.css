@@ -275,6 +275,22 @@ u {
   text-decoration: underline;
 }
 
+/* Make trigger elements look like buttons */
+u.trigger {
+  background-color: #ffc0da;
+  padding: 0.1px 3px;
+  border-radius: 0.5px;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: underline;
+  transition: background-color 0.2s ease;
+  /* border: 1px solid rgba(0, 0, 0, 0.1); */
+}
+
+u.trigger:hover {
+  background-color: hotpink;
+}
+
 /* Darker pastel green when clicked */
 u.clicked {
   background-color: hotpink;
