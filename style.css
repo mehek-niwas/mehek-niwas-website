@@ -12,16 +12,6 @@ body {
   color: #000;
 }
 
-/* Vertical pink line */
-.side-line {
-  position: fixed;
-  left: 30px;
-  top: 0;
-  width: 4px;
-  height: 100vh;
-  background: hotpink;
-}
-
 /* Header */
 header {
   margin-top: 22px;
@@ -30,20 +20,9 @@ header {
 }
 
 header h1 {
-  font-size: 60px;
+  font-size: 50px;
   display: inline-block;
-  margin: 0 20px;
-}
-
-/* .star {
-  width: 50px;
-  position: relative;
-} */
-
-.winkstar {
-  width: 40px;
-  position: relative;
-  top: 10px;
+  margin: 0 0px;
 }
 
 .name-wrapper {
@@ -51,36 +30,29 @@ header h1 {
   display: inline-block;
 }
 
-
-.star {
-  position: absolute;
-  width: 30px;
-}
-
-/* Left star: slightly below bottom-left of "mehek" */
 .star.left {
-  position: absolute;
-  left: -5px;
-  bottom: 0; /* Align it to the bottom of the 'm' first */
-  transform: translateY(18px) rotate(9deg) scale(1.5); /* Forces it 15px FURTHER down */
+  position: relative;
+  width: 45px;
+  left: 0px;
+  bottom: -30px;
+  transform: rotate(9deg);
 }
 
-/* Right star: slightly above top-right of "niwas" */
 .winkstar.right {
-  right: 30px;
-  top: -15px;
+  width: 40px;
+  position: relative;
+  right: 8px;
+  top: -13px;
   transform: rotate(-15deg); /* Tilts the star slightly */
 }
 
-/* Nav */
 nav {
   display: flex;
   justify-content: center;
-  gap: 50px;
-  margin: 40px 0 20px 0;
+  gap: 15px;
+  margin: 20px 0 20px 0;
 }
 
-/* Update this selector to target the class we added */
 .nav-button {
   background: #ffc0da;
   border: none;
@@ -91,7 +63,7 @@ nav {
   
   /* ADD THESE FOUR LINES TO FIX THE LINK LOOK */
   text-decoration: none;    /* Removes the underline */
-  color: #000;             /* Forces the text to stay black */
+  color: #000000;             /* Forces the text to stay black */
   display: inline-block;   /* Allows padding and height to work correctly */
   line-height: normal;     /* Centers text vertically */
 }
@@ -119,7 +91,7 @@ main {
 }
 
 .image-container .main-img {
-  margin-top: 85px; 
+  margin-top: 77px; 
   display: block; 
   width: 100%;
   max-width: 100%;
@@ -284,14 +256,14 @@ main {
 
 /* Text */
 .text h2 {
-  font-size: 36px;
-  margin-top: 0px;
-  margin-bottom: 10px;
+  font-size: 30px;
+  margin-top: 20px;
+  margin-bottom: 2px;
 }
 
 .text p {
   font-size: 20px;
-  line-height: 1.4;
+  line-height: 1.25;
 }
 
 /* Underlined text with pastel green highlight */
