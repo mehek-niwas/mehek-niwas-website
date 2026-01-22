@@ -152,25 +152,25 @@ main {
 .describe-1 {
   top: 1.9%;  
   right: 70.1%; 
-  width: 23.7%; 
+  width: 27.7%; 
 }
 
 .describe-2 {
   top: 21.4%;  
   right: 98.5%; 
-  width: 37.5%; 
+  width: 43.5%; 
 }
 
 .describe-3 {
   bottom: 39.8%; 
   right: 99.8%; 
-  width: 25.9%; 
+  width: 29%; 
 }
 
 .describe-4 {
   bottom: 13.9%; 
   right: 70.8%; 
-  width: 31.9%; 
+  width: 38%; 
 }
 
 /* nextera */
@@ -335,4 +335,360 @@ u.clicked {
 
 .scroll-to-top span {
   color: #000;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 900px) {
+  /* Stack main layout vertically on mobile */
+  main {
+    grid-template-columns: 1fr;
+    padding: 20px 15px 40px 15px;
+    gap: 20px;
+  }
+
+  /* Center image container on mobile */
+  .image-container {
+    max-width: 200px;
+    margin: 0 auto;
+    overflow: visible;
+  }
+
+  .image-container .main-img {
+    margin-top: 20px;
+  }
+
+  /* Scale down all hover images on mobile */
+  .hover-img {
+    transform: scale(0.7);
+    transform-origin: center center;
+  }
+
+  /* Adjust show-piece scale to work with base scale */
+  .show-piece {
+    transform: scale(0.735) !important; /* 0.7 * 1.05 */
+  }
+
+  /* Reposition all hover images to be outside main image on mobile */
+  /* Images on the RIGHT side */
+  .pixel-1 {
+    left: calc(100% - 15px) !important;
+    top: 25.9% !important;
+    width: 60px !important;
+  }
+
+  .pixel-3 {
+    left: calc(100%) !important;
+    bottom: 19.8% !important;
+    width: 50px !important;
+  }
+
+  .describe-1 {
+    left: calc(100% - 15px) !important;
+    top: 18.9% !important;
+    width: 70px !important;
+  }
+
+  .describe-3 {
+    left: calc(100%) !important;
+    bottom: 19.8% !important;
+    width: 75px !important;
+  }
+
+  .nextera-1 {
+    left: calc(100%) !important;
+    top: 20% !important;
+    width: 100px !important;
+  }
+
+  .nextera-3 {
+    left: calc(100%) !important;
+    bottom: 15.8% !important;
+    width: 150px !important;
+  }
+
+  .scraply-1 {
+    right: calc(100% - 60px) !important;
+    bottom: 33.8% !important;
+    width: 160px !important;
+  }
+
+  .entropy-1 {
+    left: calc(100% - 10px) !important;
+    top: 20% !important;
+    width: 60px !important;
+  }
+
+  .entropy-3 {
+    left: calc(100% + 5px) !important;
+    bottom: 13.8% !important;
+    width: 80px !important;
+  }
+
+  .touch-1 {
+    left: calc(100% - 25px) !important;
+    top: 20% !important;
+    width: 80px !important;
+  }
+
+  .touch-3 {
+    left: calc(100% + 10px) !important;
+    bottom: 8% !important;
+    width: 80px !important;
+  }
+
+  /* Images on the LEFT side */
+  .pixel-2 {
+    right: calc(100% - 40px) !important;
+    top: 19.4% !important;
+    width: 80px !important;
+  }
+
+  .pixel-4 {
+    right: calc(100% - 10px) !important;
+    left: auto !important;
+    bottom: 15.9% !important;
+    width: 50px !important;
+  }
+
+  .describe-2 {
+    right: calc(100% - 45px) !important;
+    top: 15.4% !important;
+    width: 120px !important;
+  }
+
+  .describe-4 {
+    right: calc(100% - 30px) !important;
+    bottom: 9.9% !important;
+    width: 70px !important;
+  }
+
+  .nextera-2 {
+    right: calc(100% - 15px) !important;
+    top: 20% !important;
+    width: 50px !important;
+  }
+
+  .nextera-4 {
+    right: calc(100% - 30px) !important;
+    bottom: 10% !important;
+    width: 150px !important;
+  }
+
+  .entropy-2 {
+    right: calc(100% - 50px) !important;
+    top: 3.4% !important;
+    width: 120px !important;
+  }
+
+  .entropy-4 {
+    right: calc(100% - 10px) !important;
+    bottom: 0.7% !important;
+    width: 120px !important;
+  }
+
+  .touch-2 {
+    right: calc(100% - 40px) !important;
+    top: 20.4% !important;
+    width: 80px !important;
+  }
+
+  .touch-4 {
+    right: calc(100% - 30px) !important;
+    bottom: 10% !important;
+    width: 100px !important;
+  }
+
+  /* Make navigation wrap on smaller screens */
+  nav {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0 15px;
+  }
+
+  .nav-button {
+    font-size: 16px;
+    padding: 6px 12px;
+  }
+
+  /* Adjust header for mobile */
+  header h1 {
+    font-size: 36px;
+  }
+
+  .star.left {
+    width: 35px;
+    bottom: -25px;
+  }
+
+  .winkstar.right {
+    width: 32px;
+    top: -10px;
+  }
+
+  /* Adjust text sizes for mobile */
+  .text h2 {
+    font-size: 26px;
+    margin-top: 10px;
+  }
+
+  .text p {
+    font-size: 18px;
+  }
+
+  /* Adjust scroll-to-top button for mobile */
+  .scroll-to-top {
+    bottom: 15px;
+    right: 15px;
+    padding: 10px 12px;
+    font-size: 16px;
+  }
+
+  .scroll-to-top img {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Hide scroll-to-top text on very small screens */
+  .scroll-to-top span {
+    display: none;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  main {
+    padding: 15px 10px 30px 10px;
+  }
+
+  /* Make images even smaller on very small screens */
+  .image-container {
+    max-width: 150px;
+    overflow: visible;
+  }
+
+  .hover-img {
+    transform: scale(0.5);
+    transform-origin: center center;
+  }
+
+  /* Adjust show-piece scale for very small screens */
+  .show-piece {
+    transform: scale(0.525) !important; /* 0.5 * 1.05 */
+  }
+
+  /* Further adjust positioning for very small screens - keep outside main image */
+  .pixel-1 {
+    width: 45px !important;
+  }
+
+  .pixel-2 {
+    width: 60px !important;
+  }
+
+  .pixel-3 {
+    width: 40px !important;
+  }
+
+  .pixel-4 {
+    width: 40px !important;
+  }
+
+  .describe-1 {
+    width: 45px !important;
+  }
+
+  .describe-2 {
+    width: 60px !important;
+  }
+
+  .describe-3 {
+    width: 45px !important;
+  }
+
+  .describe-4 {
+    width: 55px !important;
+  }
+
+  .nextera-1 {
+    width: 75px !important;
+  }
+
+  .nextera-2 {
+    width: 40px !important;
+  }
+
+  .nextera-3 {
+    width: 110px !important;
+  }
+
+  .nextera-4 {
+    width: 110px !important;
+  }
+
+  .scraply-1 {
+    width: 120px !important;
+  }
+
+  .entropy-1 {
+    width: 45px !important;
+  }
+
+  .entropy-2 {
+    width: 90px !important;
+  }
+
+  .entropy-3 {
+    width: 60px !important;
+  }
+
+  .entropy-4 {
+    width: 90px !important;
+  }
+
+  .touch-1 {
+    width: 55px !important;
+  }
+
+  .touch-2 {
+    width: 55px !important;
+  }
+
+  .touch-3 {
+    width: 55px !important;
+  }
+
+  .touch-4 {
+    width: 70px !important;
+  }
+
+  header h1 {
+    font-size: 28px;
+  }
+
+  .star.left {
+    width: 28px;
+    bottom: -20px;
+  }
+
+  .winkstar.right {
+    width: 26px;
+    top: -8px;
+  }
+
+  .text h2 {
+    font-size: 22px;
+  }
+
+  .text p {
+    font-size: 16px;
+  }
+
+  .nav-button {
+    font-size: 14px;
+    padding: 5px 10px;
+  }
+
+  nav {
+    gap: 8px;
+  }
 }
