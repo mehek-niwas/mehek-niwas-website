@@ -308,8 +308,6 @@ main {
 
 /* Underlined text with pastel green highlight */
 u {
-  font-family: 'VT323', monospace;
-  font-size: 20px;
   background-color: #ffc0da;
   text-decoration: underline;
 }
