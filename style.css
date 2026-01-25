@@ -301,9 +301,9 @@ main {
 }
 
 .text p {
-  font-family: 'Inter', sans-serif;
-  font-size: 17px;
-  line-height: 1.25;
+  font-family: 'VT323', monospace;
+  font-size: 20px;
+  line-height: 1.2;
 }
 
 /* Underlined text with pastel green highlight */
